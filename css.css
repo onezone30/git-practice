@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background: gray;
 }
 body{
     height: 100dvh;
@@ -46,8 +47,14 @@ input{
 label[for="total"], #total{
     display: inline-block;
 }
-#total{
+#total{ 
     font-size: 30px;
     font-weight: bold;
     margin-left: 5px;
 }
+
+
+
+
+
+
