@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 70px;
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 70px;
+}
+h1{
+    font-size: 40px;
+    padding: 10px;
+}
+#timer{
+    font-size: 60px;
+    padding: 30px;
+}
+.buttons{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+button{
+    padding: 20px 40px;
+    text-transform: uppercase;
+    border: 0;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px #111;
+    color: white;
+}
+.start-button{
+    background: green;
+}
+.stop-button{
+    background: red;
+}
+.reset-button{
+    background: gray;
+}
