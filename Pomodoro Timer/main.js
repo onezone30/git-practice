@@ -3,10 +3,11 @@ let time = startingMinutes * 60;
 let isRunning = false; 
 const timerEl = document.querySelector("#timer");
 
+let intervalId;
 
 function start() {
     if(!isRunning){
-        let intervalId = setInterval(() => {
+        intervalId = setInterval(() => {
             isRunning = true
             let minutes = Math.floor(time / 60);
             let seconds = time % 60;
@@ -25,12 +26,16 @@ function start() {
 }
 
 function stop(){
-    clearInterval(intervalId);
-    isRunning = false;
+    if(isRunning){
+        clearInterval(intervalId);
+        isRunning = false;
+    }
 }
 
 function reset(){
     clearInterval(intervalId);
     time = startingMinutes * 60;
+
     timerEl.innerHTML = `${startingMinutes}: 00`;
+    
 }
