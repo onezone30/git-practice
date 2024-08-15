@@ -16,7 +16,7 @@ function start() {
         
             timerEl.innerHTML = `${minutes}: ${seconds}`;
             time--;
-            i
+            
             if (time == 0) {
               clearInterval(intervalId);
               alert("Time's up");
