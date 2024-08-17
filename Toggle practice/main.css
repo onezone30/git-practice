@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --light-mode-background: white;
+    --light-mode-color: black;
+    --dark-mode-background: black;
+    --dark-mode-color: white;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s, color 0.5s;
+}
+.toggles{
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    background: rgb(196, 196, 196);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.dark{
+    display: flex;
+    margin: auto;
+}
+.light{
+    display: none;
+    margin: auto;
+}
+.lightmode{
+    color: var(--light-mode-color);
+    background-color: var(--light-mode-background);
+    transition: background-color 0.5s, color 0.5s; 
+}
+.darkmode{
+    color: var(--dark-mode-color);
+    background-color: var(--dark-mode-background);
+    transition: background-color 0.5s, color 0.5s;
+}
+.icon{
+    transition: opacity 1s, transform 1s;
+}
+.fade-in{
+    opacity: 1;
+    transform: scale(1);
+
+}
+.fade-out{
+    opacity: 0;
+    transform: scale(0.8);
+}
