@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.landing{
+    height: 100%;
+    width: 100%;
+}
+nav{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background: linear-gradient(to right, red, blue, green, violet, pink, orange, indigo);
+    height: auto;
+}
+.nav-content{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo{
+    margin-right: auto;
+    margin-left: 50px;
+    padding: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+.main-nav{
+    display: flex;
+    margin-right: 40px;
+}
+.main-nav a{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 25px;
+}
+a:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+}
+li{
+    list-style-type: none;
+}
+.menu{
+    display: none;
+}
+#menu-button{
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    margin-right: 40px;
+}
+#menu-icon{
+    height: 100%;
+    width: 100%;
+    fill: white;
+}
+
+@media screen and (max-width: 800px){
+    .main-nav{
+        display: none;
+    }
+    .menu{
+        display: flex;
+    }
+}
+@media screen and (min-width: 800px){
+    .main-nav{
+        display: flex;
+    }
+    .menu{
+        display: none;
+    }
+}
+
+/* sidebar */
+.sidebar{
+    position: fixed;
+    right: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 0;
+    background: #D1E9F6;
+}
+.sidebar-nav a{
+    display: inline-block;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 20px 40px;
+    text-align: center;
+
+
+}
+.sidebar-nav a:hover, .sidebar-nav #sidebar-menu-button:hover{
+    background: #987D9A;
+}
+.sidebar-nav #sidebar-menu-button{
+    width: 100%;
+    height: 70px;
+    background: #D1E9F6;
+    border: none;
+}
+.sidebar-nav #menu-icon{
+    fill: black;
+}
+
+/* animation for the sidebar */
+.active{
+    width: clamp(200px, 30vw, 300px);
+}
+.notActive{
+    width: 0;
+}
+.active, .notActive{
+    transition: width 0.5s;
+}
+
+/* mid part of the landing page */
+.content{
+    background-image: url(./background.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position:top;
+    background-attachment:scroll;
+    background-repeat:  no-repeat;
+    filter: brightness(0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
