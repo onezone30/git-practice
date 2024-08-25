@@ -6,6 +6,8 @@ if (localStorage.getItem('balance')) {
     balance = parseFloat(localStorage.getItem('balance'));
     balanceDisplay.textContent = `₱${balance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   }
+// localStorage.getItem('balance');
+
 let numInput = document.querySelector("#input-number");
 let transactionDisplay = document.querySelector("#display");
 
@@ -14,14 +16,11 @@ const depositBtn = document.querySelector("#deposit");
 const withdrawBtn = document.querySelector("#withdraw");
 const cancelBtn = document.querySelector("#cancel");
 
-// local storage
-
-
 const depositBalance = () => {
     amount = parseFloat(numInput.value);
-    
     let decimalAmount = amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  
+
+
     // checking if the amount is an integer then the display will not show a decimal number
     if(Number.isInteger(amount)){
         decimalAmount = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -31,22 +30,17 @@ const depositBalance = () => {
         transactionDisplay.value = " ";
     } else{
         balance += amount;
-        const finalBalance = balance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        localStorage.setItem('balance', finalBalance);
+        const finalBalance = balance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
 
+        balanceDisplay.textContent = `₱${finalBalance}`;
         transactionDisplay.textContent = `You've successfully deposited ₱${decimalAmount}`;
-        // display what is the current transaction
-        numInput.value = ""; // putting null in the input
-
-        balanceDisplay.textContent = `₱${localStorage.getItem("balance")}`; // displaying the remaining balance
-
+        numInput.value = "";
     }
-    
+
 }
 
 const withdrawBalance = () => {
     amount = parseFloat(numInput.value);
-
     let decimalAmount = amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     // checking if the amount is an integer then the display will not show a decimal number
@@ -59,11 +53,10 @@ const withdrawBalance = () => {
     } else{
         balance -= amount;
         const finalBalance = balance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
-        localStorage.setItem('balance', finalBalance);
 
+        balanceDisplay.textContent = `₱${finalBalance}`;
         transactionDisplay.textContent = `You've successfully withdrew ₱${decimalAmount}`;
         numInput.value = "";
-        balanceDisplay.textContent = `₱${localStorage.getItem("balance")}`;
     }
 }
 
@@ -88,3 +81,6 @@ depositBtn.addEventListener("click", depositBalance);
 withdrawBtn.addEventListener("click", withdrawBalance);
 cancelBtn.addEventListener("click", cancel);
 
+
+const x = 1 - "1" + "1";
+console.log(x);
