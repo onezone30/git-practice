@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --text-color: yellow;
+    --secondary-text-color: orange;
+    --initiary-text-color: brown;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: url(/To\ do\ list/stacked-waves-haikei.svg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    padding: 100px 60px 50px 60px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    font-size: clamp(40px, 8vw, 80px);
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+    text-align: center;
+}
+.inputs{
+    width: 90%;
+    padding: 40px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+input[type="text"]{
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    color: var(--initiary-text-color); 
+    border: none;
+}
+/* including the x button */
+button{
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+svg{
+    width: 100%;
+    height: 100%;
+}
+.lists{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.lists li{
+    background: #ED3EF7;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 50px
+}
+svg{
+    fill: black;
+    
+}
+#list-1{
+    display: none;
+}
+.delete_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete_btn svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 5px;
+}
