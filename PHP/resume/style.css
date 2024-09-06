@@ -1,0 +1,74 @@
+.container {
+  max-width: 1800px;
+  min-width: 700px;
+  padding: 50px;
+  margin: auto;
+}
+.title {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 50px;
+  font-weight: bolder;
+  color: white;
+}
+.members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+}
+#link{
+  text-decoration: none;
+  color: white;
+}
+.member{
+  position: relative;
+  padding: 20px 40px;
+  border: 2px solid white;
+  border-radius: 15px;
+  transform: translateY(0);
+  box-shadow: none;
+  transition: all 0.4s;
+  cursor: pointer;
+
+
+}
+
+/* when the cards are hovered */
+.member:hover {
+  transform: translateY(-1.5em);
+  box-shadow: 0 0.5em 5em 0.4em red;
+}
+.member img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid black;
+}
+.member_name {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 80px;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+}
+.member_name::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background: white;
+  z-index: 2;
+  bottom: 20px;
+  left: 50;
+}
+
+.member:hover .member_name::after {
+  width: 50%;
+  transition: all 0.3s;
+}
