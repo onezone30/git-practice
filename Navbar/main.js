@@ -56,3 +56,37 @@ const hiddenLeftElement = document.querySelectorAll(".hidden-left");
 const hiddenRightElement = document.querySelectorAll(".hidden-right");
 hiddenLeftElement.forEach((el) => observer.observe(el));
 hiddenRightElement.forEach((el) => observer.observe(el));
+
+
+// image slider
+
+const imageSlider = document.querySelector(".territories-card");
+const imgsCard = document.querySelectorAll(".territories-card img");
+
+const rightBtn = document.querySelector(".right-button");
+const leftBtn = document.querySelector(".left-button");
+
+let currentImg = 1;
+
+const imgUpdate = () => {
+    if(currentImg > imgsCard.length){
+        currentImg = 1;
+    } else if(currentImg < 1){
+        currentImg = imgsCard.length;
+    }
+
+    imageSlider.style.transform = `translateX(-${(currentImg - 1) * 800}px)`;
+    
+    
+    
+}
+
+rightBtn.addEventListener("click", () => {
+    currentImg++;
+    imgUpdate();
+});
+
+leftBtn.addEventListener("click", () => {
+    currentImg--;
+    imgUpdate();
+});
